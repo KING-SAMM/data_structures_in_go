@@ -1,7 +1,3 @@
-Sure, here's a detailed introduction for the ReadMe page of a GitHub repository on "Data Structures In Go":
-
----
-
 # Data Structures in Go
 
 Welcome to the "Data Structures in Go" repository!
@@ -40,7 +36,7 @@ Go is a simple, efficient, and powerful programming language that is well-suited
 
 3. Each data structure has its own directory containing the implementation file (`
 
-datastructures/array.go`, `datastructures/linkedlist.go`, etc.) along with example usage in `examples` directory.
+data_structures_in_go/array.go`, `data_structures_in_go/linkedlist.go`, etc.) along with example usage in `examples` directory.
 
 4. Feel free to modify and use these data structures in your own projects.
 
@@ -65,6 +61,3 @@ This repository is maintained by [KC Samm](https://github.com/KING-SAMM).
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-Feel free to customize this introduction according to your specific project and preferences!

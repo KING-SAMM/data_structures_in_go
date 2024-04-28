@@ -17,7 +17,7 @@ This repository contains Go implementations of essential data structures, includ
 - Stack
 - Queue
 - Tree (Binary Tree, Binary Search Tree)
-- [Heap](/heaps/binary_heap/)
+- [Heap](/heaps/)
 - Graph
 - Hash Table
 - and more...

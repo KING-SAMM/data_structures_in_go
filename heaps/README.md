@@ -18,21 +18,21 @@
      (first two levels are full, last level 
      not full but filled from left to right)
 
-  ![](assets/complete_tree2.png)             
+  ![](../assets/complete_tree2.png)             
  
 
 
               An Incomplete Tree 
      (level 1 is not full before moving to level 2)
                
-  ![](assets/incomplete_tree1.png)
+  ![](../assets/incomplete_tree1.png)
   
   
             An incomplete Tree 
           (Level 2 is filled from the 
             right instead of left)
                
-  ![](assets/incomplete_tree2.png)
+  ![](../assets/incomplete_tree2.png)
    
    
    3. Min-heap: Every parent's key (node value) must be smaller than its children

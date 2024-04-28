@@ -13,28 +13,29 @@
 ### A Complete Tree 
 
 All levels are full
-<img src="../assets/complete_tree1.png" alt="Complete tree 1" width="200">
+
+<img src="../assets/complete_tree1.png" alt="Complete tree 1" width="400">
   
   
 ### A Complete Tree 
 
 First two levels are full, last level not full but filled from left to right)
 
-<img src="../assets/complete_tree2.png" alt="Complete tree 2" width="200">           
+<img src="../assets/complete_tree2.png" alt="Complete tree 2" width="400">           
  
 
 ### An Incomplete Tree 
 
 Level 1 is not full before moving to level 2
-               
-![](../assets/incomplete_tree1.png)
+
+<img src="../assets/incomplete_tree1.png" alt="Incomplete tree 1" width="400">   
   
   
 ### An incomplete Tree 
 
 Level 2 is filled from the right instead of left
-               
-![](../assets/incomplete_tree2.png)
+
+<img src="../assets/incomplete_tree2.png" alt="Incomplete tree 2" width="400">   
    
 3. Min-heap: Every parent's key (node value) must be smaller than its children nodes'. This ensures the parent key is the smallest within the heap.
 Max-heap: Every parent's key (node value) must be larger than its children nodes'. This ensures the parent key is the largest within the heap.
@@ -44,8 +45,8 @@ Max-heap: Every parent's key (node value) must be larger than its children nodes
 
 To do this we use the following formulae:
   
-  - Calculate parent Index: Floor of (current index - 1)/ 2
-   
-  - Calculate left-child Index: 2 * parentIndex + 1
-   
-  - Calculate Right-child Index: 2 * parentIndex + 2
+- Calculate parent Index: Floor of (current index - 1)/ 2
+- Calculate left-child Index: 2 * parentIndex + 1
+- Calculate Right-child Index: 2 * parentIndex + 2
+
+See the Min Heap ![code here](./binary_heap/minHeap.go)

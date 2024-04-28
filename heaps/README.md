@@ -11,49 +11,28 @@
                    
              A Complete Tree 
           (all levels are full)
+  ![](assets/complete_tree1.png)
+  
+  
+             A Complete Tree 
+     (first two levels are full, last level 
+     not full but filled from left to right)
+
+  ![](assets/complete_tree2.png)             
+ 
+
+
+              An Incomplete Tree 
+     (level 1 is not full before moving to level 2)
                
-                   (_)
-      ___________ /   \ ____ level 0
-              (_)    (_)
-      ______/___|___/___|____level 1
-         (_)  (_) (_)  (_)   
-                             level 2
+  ![](assets/incomplete_tree1.png)
   
   
- *           A Complete Tree 
- *   (first two levels are full, last level 
- *   not full but filled from left to right)
- *             
- *                 (_)
- *    __________ /___|_______level 0
- *            (_)    (_)
- *    ______/___|____________level 1
- *       (_)  (_)   
- *                           level 2
- * 
- * 
- * 
- *            An Incomplete Tree 
- *   (level 1 is not full before moving to level 2)
- *             
- *                 (_)
- *    __________ /___________level 0
- *            (_)    
- *    ______/___|____________level 1
- *       (_)  (_)   
- *                           level 2
- * 
- * 
- *          An incomplete Tree 
- *        (Level 2 is filled from the 
- *          right instead of left)
- *             
- *                 (_)
- *    __________ /___|_______level 0
- *            (_)    (_)
- *    ______________/___|____level 1
- *                (_)  (_)   
- *                           level 2
+            An incomplete Tree 
+          (Level 2 is filled from the 
+            right instead of left)
+               
+  ![](assets/incomplete_tree2.png)
    
    
    3. Min-heap: Every parent's key (node value) must be smaller than its children

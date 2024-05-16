@@ -1,3 +1,6 @@
+/*-----------------------------------------------------
+| ARRAY IMPLEMENTATION OF THE MIN-HEAP DATA STRUCTURE
+------------------------------------------------------*/
 package main
 
 import ("fmt")
@@ -23,12 +26,12 @@ func (mh *minHeap) GetParentIndex(currentIndex int) int {
 
 }
 
-func (mh *minHeap) GetLeftChildIndex(parentIndex int) int {
-	return 2 * parentIndex + 1
+func (mh *minHeap) GetLeftChildIndex(curerntIndex int) int {
+	return 2 * curerntIndex + 1
 }
 
-func (mh *minHeap) GetRightChildIndex(parentIndex int) int {
-	return 2 * parentIndex + 2
+func (mh *minHeap) GetRightChildIndex(curerntIndex int) int {
+	return 2 * curerntIndex + 2
 }
 
 // Determine if node has parent, left-child or right-child. Returns a boolean
@@ -36,12 +39,12 @@ func (mh *minHeap) HasParent(currentIndex int) bool {
 	return mh.GetParentIndex(currentIndex) >= 0
 }
 
-func (mh *minHeap) HasLeftChild(index int) bool {
-	return mh.GetLeftChildIndex(index) < mh.size
+func (mh *minHeap) HasLeftChild(currentIndex int) bool {
+	return mh.GetLeftChildIndex(currentIndex) < mh.size
 }
 
-func (mh *minHeap) HasRightChild(index int) bool {
-	return mh.GetRightChildIndex(index) < mh.size
+func (mh *minHeap) HasRightChild(currentIndex int) bool {
+	return mh.GetRightChildIndex(currentIndex) < mh.size
 }
 
 // Get actual data from parent, left-child and right-child 
@@ -49,12 +52,12 @@ func (mh *minHeap) Parent(currentIndex int) int {
 	return mh.storage[mh.GetParentIndex(currentIndex)]
 }
 
-func (mh *minHeap) LeftChild(parentIndex int) int {
-	return mh.storage[mh.GetLeftChildIndex(parentIndex)]
+func (mh *minHeap) LeftChild(currentIndex int) int {
+	return mh.storage[mh.GetLeftChildIndex(currentIndex)]
 }
 
-func (mh *minHeap) RightChild(parentIndex int) int {
-	return mh.storage[mh.GetRightChildIndex(parentIndex)]
+func (mh *minHeap) RightChild(currentIndex int) int {
+	return mh.storage[mh.GetRightChildIndex(currentIndex)]
 }
 
 // Swap elements at given indices
@@ -79,7 +82,7 @@ func (mh *minHeap) heapifyUp() {
 	currentIndex := mh.size - 1
 	// keep walking up the Tree, heapifying as we go
 	// so long as we have a parent node, and the value of the parent node
-	// is greater than the current node
+	// is GREATER than the current node
 	for mh.HasParent(currentIndex) && mh.Parent(currentIndex) > mh.storage[currentIndex] {
 		// As long as the above is true we swap to maintain the minHeap
 		// property that the parent node must be less than the child

@@ -8,7 +8,7 @@
 ## Properties
 
 1. A parent node must have at most two children
-2. It must be a complete tree. It must be filled from left to right, and every level must be full, with the exception of thr last level NOT needing to be full.
+2. It must be a complete tree. It must be filled from left to right, and every level must be full, with the exception of the last level which need NOT be full.
                    
 ### A Complete Tree 
 
@@ -19,7 +19,7 @@ All levels are full
   
 ### A Complete Tree 
 
-First two levels are full, last level not full but filled from left to right)
+First two levels are full, last level not full but filled from left to right
 
 <img src="../assets/complete_tree2.png" alt="Complete tree 2" width="400">           
  
@@ -38,6 +38,7 @@ Level 2 is filled from the right instead of left
 <img src="../assets/incomplete_tree2.png" alt="Incomplete tree 2" width="400">   
    
 3. Min-heap: Every parent's key (node value) must be smaller than its children nodes'. This ensures the parent key is the smallest within the heap.
+
 Max-heap: Every parent's key (node value) must be larger than its children nodes'. This ensures the parent key is the largest within the heap.
 
 
@@ -49,4 +50,4 @@ To do this we use the following formulae:
 - Calculate left-child Index: 2 * parentIndex + 1
 - Calculate Right-child Index: 2 * parentIndex + 2
 
-See the Min Heap ![code here](./binary_heap/minHeap.go)
+See the Min Heap [code here](./binary_heap/minHeap.go)

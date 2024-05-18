@@ -82,11 +82,15 @@ We should be able to:
 11. Print the heap
 
 ## Run the code
+
 Instantiate the heap
+
     ```go
         min_heap := newHeap()
     ```
+
 Insert some nodes
+
     ```go
         min_heap.Insert(10)
         min_heap.Insert(20)
@@ -96,7 +100,9 @@ Insert some nodes
         min_heap.Insert(15)
         min_heap.Insert(30)
     ```
+
 Execute the removeHeap method in succession and print out the hep and size as you go
+
     ```go
         min_heap.Print()
         fmt.Println("Size:", min_heap.size)
@@ -109,6 +115,7 @@ Execute the removeHeap method in succession and print out the hep and size as yo
     ```
 
 Output:
+
     ```bash
         [0 5 10 20 8 15 30]
         Size: 7

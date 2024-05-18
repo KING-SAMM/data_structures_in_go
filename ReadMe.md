@@ -34,9 +34,7 @@ Go is a simple, efficient, and powerful programming language that is well-suited
 
 2. Explore the various data structure implementations in the `datastructures` directory.
 
-3. Each data structure has its own directory containing the implementation file (`
-
-data_structures_in_go/array.go`, `data_structures_in_go/linkedlist.go`, etc.) along with example usage in `examples` directory.
+3. Each data structure has its own directory containing the implementation file (`data_structures_in_go/array.go`, `data_structures_in_go/linkedlist.go`, etc.) along with example usage in `examples` directory.
 
 4. Feel free to modify and use these data structures in your own projects.
 

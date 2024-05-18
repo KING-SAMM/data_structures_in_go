@@ -161,11 +161,11 @@ func main() {
 
 	// fmt.Println(min_heap)
 	min_heap.Print()
-	fmt.Println(min_heap.size)
+	fmt.Println("Size:", min_heap.size)
 	fmt.Println("Min:", min_heap.RemoveMin())
 	min_heap.Print()
-	fmt.Println(min_heap.size)
+	fmt.Println("Size:", min_heap.size)
 	fmt.Println("Min:", min_heap.RemoveMin())
 	min_heap.Print()
-	fmt.Println(min_heap.size)
+	fmt.Println("Size:", min_heap.size)
  }

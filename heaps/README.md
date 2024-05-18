@@ -45,13 +45,14 @@ Max-heap: Every parent's key (node value) must be larger than its children nodes
 
 To do this we use the following formulae:
   
-- Calculate parent Index: Floor of (current index - 1)/ 2
-- Calculate left-child Index: 2 * parentIndex + 1
-- Calculate Right-child Index: 2 * parentIndex + 2
+- Calculate parent Index: `Floor of (current index - 1)/ 2`
+- Calculate left-child Index: `2 * parentIndex + 1`
+- Calculate Right-child Index: `2 * parentIndex + 2`
 
 See the Min-Heap [code here](./binary_heap/minHeap.go), and Max-Heap [here](./binary_heap/maxHeap.go)
 
 ## Steps
+
 1. Define a struct for the minHeap
 ```go
 type minHeap struct{
@@ -69,6 +70,7 @@ func newHeap() *minHeap {
 }
 ```
 We should be able to:
+
 3. Get parent, left-child and right-child positions 
 4. Determine if the current node has parent, left-child or right-child, and return a boolean
 5. Get actual data from parent, left-child and right-child 
@@ -78,5 +80,44 @@ We should be able to:
 9. Remove the minimum data from the heap
 10. Heapify down
 11. Print the heap
+
+## Run the code
+Instantiate the heap
+    ```go
+        min_heap := newHeap()
+    ```
+Insert some nodes
+    ```go
+        min_heap.Insert(10)
+        min_heap.Insert(20)
+        min_heap.Insert(5)
+        min_heap.Insert(8)
+        min_heap.Insert(0)
+        min_heap.Insert(15)
+        min_heap.Insert(30)
+    ```
+Execute the removeHeap method in succession and print out the hep and size as you go
+    ```go
+        min_heap.Print()
+        fmt.Println("Size:", min_heap.size)
+        fmt.Println("Min:", min_heap.RemoveMin())
+        min_heap.Print()
+        fmt.Println("Size:", min_heap.size)
+        fmt.Println("Min:", min_heap.RemoveMin())
+        min_heap.Print()
+        fmt.Println("Size:", min_heap.size)
+    ```
+
+Output:
+    ```bash
+        [0 5 10 20 8 15 30]
+        Size: 7
+        Min: 0
+        [5 8 10 20 30 15]
+        Size: 6
+        Min:  5
+        [8 15 10 20 30]
+        Size: 5
+    ```
 
 See the Min-Heap [code here](./binary_heap/minHeap.go), and Max-Heap [here](./binary_heap/maxHeap.go)

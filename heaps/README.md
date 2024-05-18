@@ -84,47 +84,43 @@ We should be able to:
 ## Run the code
 
 Instantiate the heap
-
-    ```go
-        min_heap := newHeap()
-    ```
+```go
+    min_heap := newHeap()
+```
 
 Insert some nodes
-
-    ```go
-        min_heap.Insert(10)
-        min_heap.Insert(20)
-        min_heap.Insert(5)
-        min_heap.Insert(8)
-        min_heap.Insert(0)
-        min_heap.Insert(15)
-        min_heap.Insert(30)
-    ```
+```go
+    min_heap.Insert(10)
+    min_heap.Insert(20)
+    min_heap.Insert(5)
+    min_heap.Insert(8)
+    min_heap.Insert(0)
+    min_heap.Insert(15)
+    min_heap.Insert(30)
+```
 
 Execute the removeHeap method in succession and print out the hep and size as you go
-
-    ```go
-        min_heap.Print()
-        fmt.Println("Size:", min_heap.size)
-        fmt.Println("Min:", min_heap.RemoveMin())
-        min_heap.Print()
-        fmt.Println("Size:", min_heap.size)
-        fmt.Println("Min:", min_heap.RemoveMin())
-        min_heap.Print()
-        fmt.Println("Size:", min_heap.size)
-    ```
+```go
+    min_heap.Print()
+    fmt.Println("Size:", min_heap.size)
+    fmt.Println("Min:", min_heap.RemoveMin())
+    min_heap.Print()
+    fmt.Println("Size:", min_heap.size)
+    fmt.Println("Min:", min_heap.RemoveMin())
+    min_heap.Print()
+    fmt.Println("Size:", min_heap.size)
+```
 
 Output:
-
-    ```bash
-        [0 5 10 20 8 15 30]
-        Size: 7
-        Min: 0
-        [5 8 10 20 30 15]
-        Size: 6
-        Min:  5
-        [8 15 10 20 30]
-        Size: 5
-    ```
+```bash
+    [0 5 10 20 8 15 30]
+    Size: 7
+    Min: 0
+    [5 8 10 20 30 15]
+    Size: 6
+    Min:  5
+    [8 15 10 20 30]
+    Size: 5
+```
 
 See the Min-Heap [code here](./binary_heap/minHeap.go), and Max-Heap [here](./binary_heap/maxHeap.go)

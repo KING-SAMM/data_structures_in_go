@@ -97,7 +97,7 @@ func (mh *minHeap) HeapifyUp() {
 
 // Remove the minimum data from the heap
 func (mh *minHeap) RemoveMin() int{
-	// Return an error if heap is empty
+	// Display an error if heap is empty
 	if mh.size == 0 {
         fmt.Println(errors.New("Empty heap!"))
     }
@@ -105,11 +105,11 @@ func (mh *minHeap) RemoveMin() int{
 	data := mh.storage[0]
 	// Replace the element at the root with the last element in the heap
 	mh.storage[0] = mh.storage[mh.size - 1]
-	// Update the slice
+	// Update the heap (slice)
 	mh.storage = mh.storage[: mh.size - 1]
 	// Reduce the heap size
 	mh.size -= 1
-	// Heapify down
+	// place new node at root in right position by heapifying down
 	mh.HeapifyDown()
 	// Return the removed data
     return data
@@ -121,7 +121,7 @@ func (mh *minHeap) HeapifyDown() {
 	currentIndex := 0
 	// So long as left child exists
 	for mh.HasLeftChild(currentIndex) {
-		// grab its index
+		// grab its index, set it to smallerChildIndex
 		smallerChildIndex := mh.GetLeftChildIndex(currentIndex)
 		// Check if Right Child exists and if it's smaller than left child 
 		if mh.HasRightChild(currentIndex) && mh.RightChild(currentIndex) < mh.LeftChild(currentIndex) {
@@ -151,6 +151,7 @@ func (mh *minHeap) Print() {
 func main() {
 	min_heap := newHeap()
 
+	// Insert a number of nodes
 	min_heap.Insert(10)
 	min_heap.Insert(20)
 	min_heap.Insert(5)
@@ -159,7 +160,7 @@ func main() {
 	min_heap.Insert(15)
 	min_heap.Insert(30)
 
-	// fmt.Println(min_heap)
+	// Remove min and print in succession
 	min_heap.Print()
 	fmt.Println("Size:", min_heap.size)
 	fmt.Println("Min:", min_heap.RemoveMin())
@@ -168,4 +169,15 @@ func main() {
 	fmt.Println("Min:", min_heap.RemoveMin())
 	min_heap.Print()
 	fmt.Println("Size:", min_heap.size)
+
+	// Output:
+	
+	// [0 5 10 20 8 15 30]
+	// 7
+	// Min: 0
+	// [5 8 10 20 30 15]
+	// 6
+	// Min:  5
+	// [8 15 10 20 30]
+	// 5
  }

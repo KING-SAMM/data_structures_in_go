@@ -3,7 +3,10 @@
 ------------------------------------------------------*/
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"errors"
+)
 
 // Define a struct for the minHeap
 type maxHeap struct {
@@ -84,6 +87,54 @@ func (mxh *maxHeap) HeapifyUp() {
 	}
 }
 
+// Remove the maximum data from the heap
+func (mxh *maxHeap) RemoveMax() int {
+	// Display an error if heap is empty 
+	if mxh.size == 0 {
+		fmt.Println(errors.New("Empty heap!"))
+	}
+	// Get the maximum element/value which should be at the root
+	data := mxh.storage[0]
+	// Replace it with last node/element in the heap
+	mxh.storage[0] = mxh.storage[mxh.size - 1]
+	// Update heap (slice)
+	mxh.storage = mxh.storage[:mxh.size - 1]
+	// Update (reduce) the heap size
+	mxh.size -= 1
+	// place new node at root in right position by heapifying down
+	mxh.HeapifyDown()
+	// Return the removed largest node
+	return data
+}
+
+// Heapify down
+func (mxh *maxHeap) HeapifyDown() {
+	// Starting at the root position
+	currentIndex := 0
+	// so long as left child exists
+	for mxh.HasLeftChild(currentIndex) {
+		// grab its index, set it to largerChildIndex
+		largerChildIndex := mxh.GetLeftChildIndex(currentIndex)
+		// Check if right child exists and if it is greater than left child
+		if mxh.HasRightChild(currentIndex) && mxh.RightChild(currentIndex) > mxh.LeftChild(currentIndex) {
+			// If true reassign largerChildIndex to right child's index
+			largerChildIndex = mxh.GetRightChildIndex(currentIndex)
+		}
+		// Check if current node is greater than selected (larger )child node 
+		if mxh.storage[currentIndex] > mxh.storage[largerChildIndex] {
+			// if true break out of loop
+			break
+		} else {
+			// else swap their positions
+			mxh.Swap(currentIndex, largerChildIndex)
+			// Move new position to node at largerChildIndex
+			currentIndex = largerChildIndex 
+		}
+	}
+
+}
+
+
 // Print the heap
 func (mxh *maxHeap) Print() {
 	fmt.Println(mxh.storage)
@@ -92,6 +143,7 @@ func (mxh *maxHeap) Print() {
 func main() {
 	max_heap := createNewHeap()
 
+	// Insert a number of nodes
 	max_heap.Insert(10)
 	max_heap.Insert(20)
 	max_heap.Insert(5)
@@ -99,8 +151,25 @@ func main() {
 	max_heap.Insert(0)
 	max_heap.Insert(15)
 	max_heap.Insert(30)
-	// fmt.Println(max_heap)
+
+	// Remove max and print in succession
 	max_heap.Print()
-	fmt.Println(max_heap.size)
+	fmt.Println("Size:", max_heap.size)
+	fmt.Println("Max:", max_heap.RemoveMax())
+	max_heap.Print()
+	fmt.Println("Size:", max_heap.size)
+	fmt.Println("Max:", max_heap.RemoveMax())
+	max_heap.Print()
+	fmt.Println("Size:", max_heap.size)
+
+	// Output:
+	// [30 10 20 8 0 5 15]
+	// Size: 7
+	// Max: 30
+	// [20 10 15 8 0 5]
+	// Size: 6
+	// Max: 20
+	// [15 10 5 8 0]
+	// Size: 5
 }
 
